@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Solar System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100%;
+      width: 100%;
+      font-family: Arial, sans-serif;
+    }
+
+    canvas {
+      display: block;
+    }
+
+    #controls {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 10;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 16px;
+      border-radius: 8px;
+      color: white;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    #controls h3 {
+      margin-top: 0;
+    }
+
+    #controls input[type="range"] {
+      width: 100%;
+    }
+
+    #tooltip {
+      position: absolute;
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 6px 10px;
+      border-radius: 4px;
+      pointer-events: none;
+      display: none;
+      font-size: 12px;
+      z-index: 20;
+    }
+
+    .btn {
+      margin: 4px 0;
+      padding: 6px 12px;
+      background: #ccc;
+      color: black;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #aaa;
+    }
+
+    body.light-mode {
+      background-color: #f0f0f0;
+    }
+
+    body.light-mode #controls {
+      background: rgba(255, 255, 255, 0.9);
+      color: #000;
+    }
+
+    body.light-mode .btn {
+      background: #ddd;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <!-- Tooltip -->
+  <div id="tooltip"></div>
+
+  <!-- Control Panel -->
+  <div id="controls">
+    <h3>Orbital Speeds</h3>
+    <button id="pauseBtn" class="btn">Pause</button>
+    <button id="themeToggle" class="btn">Light Theme</button>
+    <!-- Sliders will be added dynamically -->
+  </div>
+
+  <!-- Load Three.js -->
+  <script src="https://unpkg.com/three@0.152.2/build/three.min.js"></script>
+
+  <!-- Your JS -->
+  <script src="script.js"></script>
+</body>
+</html>
